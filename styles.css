@@ -1,0 +1,179 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+/* Good Practice: Use variables for colors and define box-sizing */
+:root {
+  --light-text-color: #ffffff;
+  --dark-text-color: #000000;
+}
+
+html {
+  /* Define base font size for 'rem' units */
+  font-size: 16px;
+  box-sizing: border-box; /* Good practice for consistent box model */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit; /* Inherit box-sizing from html */
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  margin: 0; /* Remove default body margin */
+}
+
+/* Styles for the header element */
+header.site-header {
+    background: linear-gradient(-104.53deg, #7800a9, #37ffb3);
+    padding: 1em;
+    text-align: center;
+    border: solid #fff 2px;
+}
+
+/* Styles for the main title within the header */
+.site-title {
+  color: var(--light-text-color);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* Styles for a general content section */
+.content-section {
+  padding: 2em;
+  text-align: center;
+}
+
+.content-section h2 {
+  color: var(--dark-text-color);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5em;
+}
+
+/* Base common for all content blocks (flex containers for media galleries) */
+.content-block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start for better flow */
+    gap: 1.5rem; /* Increased gap for better spacing */
+    padding: 1em;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    margin-bottom: 2em; /* Space between content blocks */
+}
+
+/* Specific styling for image/media galleries */
+.media-gallery {
+    flex-direction: row; /* Default to row for wider screens */
+}
+
+/* Specific styling for video galleries */
+.video-gallery {
+    flex-direction: column; /* Stacks videos vertically by default */
+}
+
+/* Styling for individual media items (image or video + caption) */
+.media-item {
+  text-align: center;
+  margin: 0.5em; /* Add some margin around individual items */
+}
+
+/* Makes images and iframes fluid within their containers */
+.media-item img,
+.media-item iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Adds a visual touch */
+    display: block; /* Ensures they don't have extra space below */
+    margin: 0 auto; /* Center images/iframes */
+}
+
+/* Styles for the caption below media */
+.media-caption {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem; /* Adjusted font size for captions */
+  color: var(--dark-text-color);
+  text-decoration: none;
+  font-weight: normal; /* Captions usually aren't bold */
+  display: block;
+  margin-top: 0.8em; /* Space above caption */
+}
+
+/* Styles for the footer element (formerly .Referencias div) */
+footer.site-footer {
+    padding: 2em;
+    background: linear-gradient(-50.53deg, #7800a9, #37ffb3);
+    color: var(--light-text-color);
+    text-align: center;
+}
+
+footer.site-footer p {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+footer.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer.site-footer li {
+  margin: 0.5em 0;
+}
+
+footer.site-footer li a {
+  color: var(--light-text-color);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+footer.site-footer li a:hover {
+  text-decoration: underline;
+}
+
+b, strong { /* Unifies 'b' and 'strong' */
+  font-weight: bold;
+}
+
+
+/* --- Media Queries --- */
+
+/* Tablet screens and larger */
+@media screen and (min-width: 768px) {
+  .site-title {
+    font-size: 3rem;
+  }
+
+  .content-block {
+    padding: 1.5em; /* Slightly more padding on larger screens */
+  }
+
+  .media-gallery {
+    flex-direction: row; /* Ensure row layout on tablets */
+  }
+
+  .video-gallery {
+    flex-direction: row; /* Display videos in a row on tablets */
+    align-items: center; /* Center videos when in row */
+  }
+
+  footer.site-footer p {
+      font-size: 2.5rem;
+  }
+
+  footer.site-footer li {
+      display: inline-block; /* Places links side by side */
+      margin: 0 1.5em;
+  }
+}
+
+/* Desktop screens */
+@media screen and (min-width: 1024px) {
+    .content-block {
+        gap: 2.5rem; /* Larger gap on desktops */
+    }
+}
