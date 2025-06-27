@@ -39,6 +39,8 @@ header.site-header {
   font-weight: bold;
   font-size: 2.5rem;
   margin: 0;
+  text-decoration: none;
+
 }
 
 /* Styles for a general content section */
@@ -175,5 +177,157 @@ b, strong { /* Unifies 'b' and 'strong' */
 @media screen and (min-width: 1024px) {
     .content-block {
         gap: 2.5rem; /* Larger gap on desktops */
+    }
+  }
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+/* Melhores práticas: Usar variáveis para cores e definir box-sizing */
+:root {
+  --primary-color: #625c9f;
+  --text-color: #ffffff;
+  --dark-text: #000000;
+}
+
+html {
+  /* Define o tamanho da fonte base para unidades 'rem' */
+  font-size: 16px; 
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  margin: 0; /* Remove a margem padrão do body */
+}
+
+.cabecalho {
+    background: linear-gradient(-104.53deg, #7800a9, #37ffb3);  padding: 1em;
+    text-align: center;
+    border: solid #fff 2px;
+}
+
+.titulo-navbar {
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem; /* Usando rem ao invés de px */
+  margin: 0;
+}
+
+.imagens, .imagens_ {
+  padding: 1em;
+  text-align: center;
+}
+
+.legenda {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem; /* Usando rem */
+  color: var(--dark-text);
+  text-decoration: none;
+  font-weight: bold;
+  display: block; /* Garante que a legenda ocupe a largura */
+  margin-top: 0.5em;
+}
+
+.legenda:hover {
+  text-decoration: underline;
+}
+
+/* Base comum para todos os blocos de conteúdo */
+.content-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1em;
+}
+
+/* Flex-direction muda em telas menores */
+.bloco-videos {
+    flex-direction: column;
+}
+
+.bloco {
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    flex-direction: column; /* Começa como coluna para mobile */
+}
+
+/* Torna imagens e iframes fluidos */
+.bloco img,
+.bloco iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Adiciona um toque visual */
+}
+
+footer, .Referências {
+    padding: 2em;
+    background: linear-gradient(-50.53deg, #7800a9, #37ffb3);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.Referências p {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+.Referências ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Referências li {
+  margin: 0.5em 0;
+}
+
+.Referências li a {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.Referências li a:hover {
+  text-decoration: underline;
+}
+
+b, strong { /* Unifica 'b' e 'strong' */
+  font-weight: bold;
+}
+
+
+/* --- Media Queries --- */
+
+/* Telas de tablet e maiores */
+@media screen and (min-width: 768px) {
+  .titulo-navbar {
+    font-size: 3rem;
+  }
+
+  .legenda {
+    font-size: 2.2rem;
+  }
+  
+  /* Volta para layout em linha em telas maiores */
+  .bloco {
+    flex-direction: row;
+  }
+
+  .Referências p {
+      font-size: 2.5rem;
+  }
+
+  .Referências li {
+      display: inline-block; /* Coloca os links lado a lado */
+      margin: 0 1.5em;
+  }
+}
+
+/* Telas de desktop */
+@media screen and (min-width: 1024px) {
+    .bloco-videos, .bloco {
+        gap: 2rem;
     }
 }
